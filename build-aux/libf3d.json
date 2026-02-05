@@ -23,7 +23,8 @@
         "-DF3D_PLUGIN_BUILD_USD=ON",
         "-DF3D_PLUGIN_BUILD_VDB=OFF",
         "-DBUILD_TESTING=OFF",
-        "-DF3D_LINUX_LINK_FILESYSTEM=OFF"
+        "-DF3D_LINUX_LINK_FILESYSTEM=OFF",
+        "-DCMAKE_INSTALL_LIBDIR=lib"
     ],
     "sources": [
         {
@@ -77,7 +78,8 @@
                 "-DTBB_TEST=OFF",
                 "-DTBB_EXAMPLES=OFF",
                 "-DCMAKE_BUILD_TYPE=Release",
-                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
@@ -94,7 +96,8 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DBUILD_TESTING=OFF",
-                "-DBUILD_SHARED_LIBS=ON"
+                "-DBUILD_SHARED_LIBS=ON",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
@@ -164,7 +167,8 @@
                 "-DVTK_MODULE_ENABLE_VTK_RenderingOpenGL2=YES",
                 "-DVTK_MODULE_ENABLE_VTK_RenderingRayTracing=DEFAULT",
                 "-DVTK_MODULE_ENABLE_VTK_RenderingVolumeOpenGL2=YES",
-                "-DVTK_MODULE_ENABLE_VTK_TestingCore=YES"
+                "-DVTK_MODULE_ENABLE_VTK_TestingCore=YES",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
@@ -179,7 +183,8 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DBUILD_SHARED_LIBS=ON"
+                "-DBUILD_SHARED_LIBS=ON",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
@@ -208,6 +213,9 @@
         {
             "name": "libdeflate",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_INSTALL_LIBDIR=lib"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -219,6 +227,9 @@
         {
             "name": "openexr",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_INSTALL_LIBDIR=lib"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -255,7 +266,8 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DASSIMP_BUILD_ASSIMP_TOOLS:BOOL=NO",
-                "-DASSIMP_BUILD_TESTS:BOOL=NO"
+                "-DASSIMP_BUILD_TESTS:BOOL=NO",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
@@ -270,7 +282,8 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DUSE_TESTS:BOOL=OFF",
-                "-DUSE_HDF5:BOOL=ON"
+                "-DUSE_HDF5:BOOL=ON",
+                "-DCMAKE_INSTALL_LIBDIR=lib"
             ],
             "sources": [
                 {
