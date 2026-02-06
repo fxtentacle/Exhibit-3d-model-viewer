@@ -1,3 +1,26 @@
+# GTK Bug 4.13.5 and later !!!
+
+I'm leaving this here as a note for myself... or you?
+This app is affected by the GTK OpenGL context sharing bug:
+https://gitlab.gnome.org/GNOME/gtk/-/issues/6423
+caused by the switch to GLES as default:
+https://gitlab.gnome.org/GNOME/gtk/-/commit/699c6d6159ec4da5adc80426e9d96ecbb0a76b66
+and that will make it throw errors like
+```
+vtkF3DExternalRenderWindow (0x6177a77a3e50): Failed to initialize OpenGL functions!
+vtkF3DExternalRenderWindow (0x6177a77a3e50): Unable to find a valid OpenGL 3.2 or later implementation.
+vtkShaderProgram (0x58883e7b3850): 0(2) : error C0201: unsupported version 150
+```
+with current NVIDIA drivers
+and that's why
+```bash
+flatpak override --env=GDK_DEBUG=gl-prefer-gl io.github.nokse22.Exhibit
+```
+is required to restore GTK's old behaviour.
+
+-----
+
+
 <img height="128" src="data/icons/hicolor/scalable/apps/io.github.nokse22.Exhibit.svg" align="left"/>
 
 # Exhibit
